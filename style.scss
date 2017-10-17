@@ -1,0 +1,32 @@
+// Variables
+// Colors
+$text-color: #FFFFFF;
+$footer-bg-color: #65698E;
+$main-bg-color: #263238;
+$bg-color: #263238;
+
+// Global tags
+body{
+	background-color: $bg-color;
+	color: $text-color;
+	padding-top: 50px;
+}
+footer {
+	background-color: $footer-bg-color;
+	height: 50px;
+	margin: 10px 0px 0px 0px;
+	& div {
+		line-height: 50px;
+		vertical-align: middle;
+		color: $text-color;
+	}
+}
+
+// Classes & Ids
+.container {
+	background-color: $main-bg-color;
+}
+#search-random-article, #search-specific-article {
+	margin: 25px;
+	padding: 15p;
+}

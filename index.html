@@ -1,0 +1,50 @@
+<div class="container">
+	<!-- Header section-->
+	<header>
+		<h1 class="center-align">Wikipedia Viewer</h1>
+	</header>
+	<!-- Main section-->
+	<main>
+		<!-- Random article section-->
+		<section id="search-random-article">
+			<h3 class="center-align">
+				<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random article</a>
+			</h3>
+		</section>
+		<!-- Search specific section-->
+		<!-- Angular app -->
+		<section id="search-specific-article" ng-app="appWiki" ng-controller="ctrlWiki">
+			<div class="row">
+				<form ng-submit="searchWiki()" id="form-wiki" name="form-wiki">
+					<div class="input-field col s9">
+						<label for="input-wiki" class="active">Search an article</label>
+						<input placeholder="Search an article" class="validate" id="input-wiki" name="input-wiki" type="text" aria-label="Search an article" ng-model="searchWikiInput" required autocomplete="off">
+					</div>
+					<div class="input-field col s3">
+						<button class="waves-effect waves-light btn-floating btn-large transparent">
+							<i class="material-icons">search</i>
+						</button>
+					</div>
+				</form>
+			</div>
+			<!-- Search result -->
+			<div class="row">
+				<div class="col s12" ng-repeat="article in results">
+					<div class="card blue-grey darken-2">
+						<div class="card-content white-text">
+							<span class="card-title">{{article.articleTitle}}</span>
+							<p>{{article.articleText}}</p>
+						</div>
+						<div class="card-action">
+							<a ng-href="https://en.wikipedia.org/?curid={{article.articleLink}}" target="_blank">See the full article</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- Footer section-->
+	<footer>
+		<div class="center-align">©2017 Caio Soares</div>
+	</footer>
+</div>
